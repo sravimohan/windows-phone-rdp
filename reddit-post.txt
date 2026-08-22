@@ -1,0 +1,22 @@
+Title: Got Microsoft Remote Desktop working on a Lumia 1520 in 2026
+
+I freshly reset an old Lumia 1520 running Windows 10 Mobile 1607 and wanted to make it useful again as a small remote display.
+
+The Store/browser situation is mostly broken now, but I got Microsoft's old ARM32 Remote Desktop client installed through Windows Device Portal and successfully connected the Lumia to a Windows 11 Pro PC.
+
+I documented the working process here:
+
+https://sravimohan.github.io/windows-phone-rdp/
+
+It covers:
+- enabling Developer Mode / Device Portal
+- the HTTPS/TLS problem with modern browsers and the HTTP workaround
+- the exact Microsoft Remote Desktop ARM package/version that worked
+- how to verify the APPX is coming from Microsoft's delivery servers
+- sideloading through App Manager
+- Windows 11 Pro RDP setup
+- a Windows Hello / Microsoft-account credential workaround
+
+Tested on Lumia 1520 / Windows 10 Mobile 1607 / build 10.0.14393.2551.
+
+If anyone tries it on another Windows 10 Mobile device, I'd be interested to know what works.
