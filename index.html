@@ -6,70 +6,30 @@
   <title>Windows Phone RDP — Microsoft Remote Desktop on Windows 10 Mobile</title>
   <meta name="description" content="How to sideload Microsoft Remote Desktop on Windows 10 Mobile and connect to Windows 11 Pro. Tested on a Lumia 1520 running Windows 10 Mobile 1607.">
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #0b0f14;
-      --card: #121821;
-      --text: #e8eef5;
-      --muted: #a9b4c0;
-      --accent: #65b7ff;
-      --border: #263241;
-      --code: #0a0d12;
-      --ok: #9be7b1;
-      --warn: #ffd37a;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f6f8fb;
-        --card: #ffffff;
-        --text: #18202a;
-        --muted: #5f6b78;
-        --accent: #0067c0;
-        --border: #d9e0e7;
-        --code: #f0f3f6;
-        --ok: #0a7a36;
-        --warn: #8a5a00;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    main { max-width: 900px; margin: 0 auto; padding: 40px 22px 80px; }
-    header { margin-bottom: 28px; }
-    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.08; margin: 0 0 14px; }
-    h2 { margin-top: 42px; border-top: 1px solid var(--border); padding-top: 28px; }
-    h3 { margin-top: 26px; }
-    a { color: var(--accent); }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 760px; }
-    .card {
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 18px 0;
-    }
-    .ok { border-left: 4px solid var(--ok); }
-    .warn { border-left: 4px solid var(--warn); }
-    code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
-    code { background: var(--code); padding: .12em .35em; border-radius: 5px; }
-    pre {
-      background: var(--code);
-      border: 1px solid var(--border);
-      padding: 14px 16px;
-      overflow-x: auto;
-      border-radius: 10px;
-    }
-    pre code { padding: 0; background: transparent; }
-    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
-    th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
-    th { background: var(--card); }
-    .muted { color: var(--muted); }
-    .small { font-size: .92rem; }
-    footer { color: var(--muted); margin-top: 55px; border-top: 1px solid var(--border); padding-top: 22px; }
+    :root { color-scheme: light dark; --bg:#0b0f14; --card:#121821; --text:#e8eef5; --muted:#a9b4c0; --accent:#65b7ff; --border:#263241; --code:#0a0d12; --ok:#9be7b1; --warn:#ffd37a; }
+    @media (prefers-color-scheme: light) { :root { --bg:#f6f8fb; --card:#fff; --text:#18202a; --muted:#5f6b78; --accent:#0067c0; --border:#d9e0e7; --code:#f0f3f6; --ok:#0a7a36; --warn:#8a5a00; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+    main { max-width:900px; margin:0 auto; padding:40px 22px 80px; }
+    header { margin-bottom:28px; }
+    h1 { font-size:clamp(2rem,5vw,3.2rem); line-height:1.08; margin:0 0 14px; }
+    h2 { margin-top:42px; border-top:1px solid var(--border); padding-top:28px; }
+    h3 { margin-top:26px; }
+    a { color:var(--accent); }
+    .lead { font-size:1.15rem; color:var(--muted); max-width:760px; }
+    .card { border:1px solid var(--border); background:var(--card); border-radius:12px; padding:18px 20px; margin:18px 0; }
+    .ok { border-left:4px solid var(--ok); }
+    .warn { border-left:4px solid var(--warn); }
+    code,pre { font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace; }
+    code { background:var(--code); padding:.12em .35em; border-radius:5px; }
+    pre { background:var(--code); border:1px solid var(--border); padding:14px 16px; overflow-x:auto; border-radius:10px; }
+    pre code { padding:0; background:transparent; }
+    table { border-collapse:collapse; width:100%; margin:16px 0; }
+    th,td { border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top; }
+    th { background:var(--card); }
+    .muted { color:var(--muted); }
+    .small { font-size:.92rem; }
+    footer { color:var(--muted); margin-top:55px; border-top:1px solid var(--border); padding-top:22px; }
   </style>
 </head>
 <body>
@@ -77,11 +37,7 @@
   <header>
     <h1>Microsoft Remote Desktop on Windows 10 Mobile</h1>
     <p class="lead">A practical 2026 guide to sideloading the old Microsoft Remote Desktop client on a Windows 10 Mobile phone and connecting it to Windows 11 Pro.</p>
-    <div class="card ok">
-      <strong>Tested configuration:</strong><br>
-      Nokia Lumia 1520 · Windows 10 Mobile 1607 · OS build 10.0.14393.2551 · ARM32<br>
-      Microsoft Remote Desktop 8.1.9.17 · Windows 11 Pro host
-    </div>
+    <div class="card ok"><strong>Tested configuration:</strong><br>Nokia Lumia 1520 · Windows 10 Mobile 1607 · OS build 10.0.14393.2551 · ARM32<br>Microsoft Remote Desktop 8.1.9.17 · Windows 11 Pro host</div>
   </header>
 
   <h2>What this does</h2>
@@ -91,23 +47,13 @@
   <p>On the phone, open:</p>
   <pre><code>Settings → Update &amp; security → For developers</code></pre>
   <p>Enable:</p>
-  <ul>
-    <li>Developer mode</li>
-    <li>Device discovery</li>
-    <li>Device Portal</li>
-  </ul>
+  <ul><li>Developer mode</li><li>Device discovery</li><li>Device Portal</li></ul>
   <p>For a trusted home LAN, authentication can be temporarily disabled while installing the package.</p>
-
-  <div class="card warn">
-    <strong>Modern browser TLS problem:</strong> Windows 10 Mobile's Device Portal HTTPS certificate/TLS stack is old enough that current Edge may refuse the connection completely. In the tested setup, plain HTTP worked:
-    <pre><code>http://PHONE-IP</code></pre>
-    Example: <code>http://192.168.4.25</code>
-  </div>
+  <div class="card warn"><strong>Modern browser TLS problem:</strong> Windows 10 Mobile's Device Portal HTTPS certificate/TLS stack is old enough that current Edge may refuse the connection completely. In the tested setup, plain HTTP worked:<pre><code>http://PHONE-IP</code></pre>Example: <code>http://192.168.4.25</code></div>
 
   <h2>2. Obtain the Microsoft Remote Desktop ARM package</h2>
   <p>The package that worked in the tested setup is:</p>
   <pre><code>Microsoft.RemoteDesktop_8.1.9.17_arm__8wekyb3d8bbwe.appx</code></pre>
-
   <table>
     <tr><th>Property</th><th>Value</th></tr>
     <tr><td>Architecture</td><td>ARM / ARM32</td></tr>
@@ -121,14 +67,19 @@
   <pre><code>https://store.rg-adguard.net/</code></pre>
   <p>Select <strong>ProductId</strong>, enter <code>9WZDNCRFJ3PS</code>, choose <strong>Retail</strong>, and generate the links. Find the exact ARM file shown above.</p>
 
-  <div class="card">
-    <strong>Verify the actual download host.</strong> The package link returned for this file should point to Microsoft's delivery infrastructure, such as:
-    <pre><code>*.dl.delivery.mp.microsoft.com
-*.delivery.mp.microsoft.com</code></pre>
-    RG-Adguard is only being used to discover the Store package URL; the APPX itself should be downloaded from a Microsoft delivery hostname.
-  </div>
+  <div class="card"><strong>Verify the actual download host.</strong> The package link returned for this file should point to Microsoft's delivery infrastructure, such as:<pre><code>*.dl.delivery.mp.microsoft.com
+*.delivery.mp.microsoft.com</code></pre>RG-Adguard is only being used to discover the Store package URL; the APPX itself should be downloaded from a Microsoft delivery hostname.</div>
 
-  <p class="muted small">Do not use ARM64, x86 or x64 packages on a Lumia 1520. Also avoid publishing a temporary signed CDN URL as a permanent download link: those URLs expire.</p>
+  <div class="card warn"><strong>Do not re-host the APPX.</strong> This repository intentionally does not redistribute Microsoft's application binary. Download it from Microsoft's delivery infrastructure and verify the file before installing it. Temporary Microsoft CDN links expire, so a generated download URL should not be treated as a permanent link.</div>
+
+  <h3>Verify the downloaded APPX</h3>
+  <p>On Windows, run PowerShell in the folder containing the file:</p>
+  <pre><code>Get-FileHash .\Microsoft.RemoteDesktop_8.1.9.17_arm__8wekyb3d8bbwe.appx -Algorithm SHA1</code></pre>
+  <p>The expected SHA-1 for the package used in this guide is:</p>
+  <pre><code>7A27F3A0DD09ABDCD59A58D96ACB793A1ED0DF8D</code></pre>
+  <p>If the hash differs, do not install the file.</p>
+
+  <p class="muted small">Do not use ARM64, x86 or x64 packages on a Lumia 1520.</p>
 
   <h3>Possible dependency</h3>
   <p>If deployment reports a missing Visual C++ dependency, the matching ARM phone framework from the same Store results is:</p>
@@ -145,18 +96,15 @@
   <p>On the Windows 11 PC:</p>
   <pre><code>Settings → System → Remote Desktop → On</code></pre>
   <p>Windows 11 <strong>Pro, Enterprise or Education</strong> can host an incoming Microsoft RDP session. Windows 11 Home cannot use the built-in RDP host.</p>
-
   <p>Find the host's LAN IP address:</p>
   <pre><code>ipconfig</code></pre>
   <p>Use the active adapter's IPv4 address as the PC address in the Lumia Remote Desktop app.</p>
 
   <h2>5. Username formats</h2>
-
   <h3>Local Windows account</h3>
   <pre><code>PCNAME\username</code></pre>
   <p>You can confirm the exact form by running:</p>
   <pre><code>whoami</code></pre>
-
   <h3>Microsoft account</h3>
   <pre><code>MicrosoftAccount\your-email@example.com</code></pre>
   <p>Use the Microsoft account <strong>password</strong>, not the Windows Hello PIN.</p>
@@ -165,24 +113,14 @@
   <p>If Windows 11 normally uses Windows Hello/PIN and the old Lumia RDP client rejects otherwise-correct Microsoft account credentials, run this once on the Windows 11 host:</p>
   <pre><code>runas /u:MicrosoftAccount\YOUR_EMAIL winver</code></pre>
   <p>Enter the Microsoft account password when prompted. Nothing is displayed while typing the password.</p>
-
   <p>After <code>winver</code> launches successfully, retry the Lumia connection using:</p>
   <pre><code>Username: MicrosoftAccount\YOUR_EMAIL
 Password: your Microsoft account password</code></pre>
-
-  <div class="card ok">
-    This workaround succeeded on the tested Windows 11 Pro system while leaving Windows Hello and PIN enabled for normal local sign-in.
-  </div>
+  <div class="card ok">This workaround succeeded on the tested Windows 11 Pro system while leaving Windows Hello and PIN enabled for normal local sign-in.</div>
 
   <h2>7. Connect from the Lumia</h2>
   <p>In Microsoft Remote Desktop on the phone:</p>
-  <ol>
-    <li>Add a new PC.</li>
-    <li>Enter the Windows 11 PC's IPv4 address.</li>
-    <li>Add the appropriate credentials.</li>
-    <li>Connect and accept the local certificate prompt if shown.</li>
-  </ol>
-
+  <ol><li>Add a new PC.</li><li>Enter the Windows 11 PC's IPv4 address.</li><li>Add the appropriate credentials.</li><li>Connect and accept the local certificate prompt if shown.</li></ol>
   <p>Landscape orientation works well on the Lumia 1520's 1920×1080 display. Touch input is passed through to the remote desktop.</p>
 
   <h2>Troubleshooting</h2>
@@ -197,10 +135,7 @@ Password: your Microsoft account password</code></pre>
 
   <h2>Scope</h2>
   <p>This guide documents a setup that was actually tested on a Lumia 1520 running Windows 10 Mobile 1607. The same ARM package may work on other Windows Phone / Windows 10 Mobile devices, but that has not been verified here.</p>
-
-  <footer>
-    <p>Repository: <code>sravimohan/windows-phone-rdp</code></p>
-  </footer>
+  <footer><p>Repository: <code>sravimohan/windows-phone-rdp</code></p></footer>
 </main>
 </body>
 </html>
